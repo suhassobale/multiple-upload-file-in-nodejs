@@ -10,7 +10,7 @@ var storage =   multer.diskStorage({
       cb(null, file.originalname);
     }
   });
-var upload = multer({storage:storage}).single('filetitle');
+var upload = multer({storage:storage}).array('filetitle',2);   // file name and limit to upload files
 router.get('/',function(req,res,next){
     res.render('file-upload',{"form":"file upload form"});
 });
